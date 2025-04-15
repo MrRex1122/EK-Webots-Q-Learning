@@ -1,0 +1,32 @@
+Instructions
+1. Extract provided ZIP which contains all files, including world, .py, .proto robot files
+
+World setting adjustments (important)
+2. Open webots
+3. Load hekp.wbt world file in worlds folder(This world contains Khepera3 robot, 12x12 grid, obstacles and target)
+4. In the scene tree, find Khepera3 robot node
+5. Change the “supervisor” field from FALSE to TRUE
+6. Save the world file
+
+Training
+7. Open webots
+8. Load hekp.wbt world file
+9. Ensure robot’s controller to “khepera_qlearning.py”
+10. Press the play button to start simulation in Webots (faster speed if preferred)
+11 Training process will automatically start:
+      Robot will try to find a path from start to target
+      All training progress will be displayed in console
+      Q-table is saved every 10 episodes as “q_table.npy” in khepera_qlearning controller folder
+
+Testing
+12. After training is completed, stop simulation
+13. Copy “q_table.npy” from khepera_qlearning controller folder to khepera_best_path controller folder
+14. Change robot’s controller to “khepera_best_path.py”
+15. This controller will demonstrate the learned optimal path based on saved q-table
+16. Press play and watch how robot will be navigating to target based on previous experience
+
+Generate visualization
+17. After training, run Q-table Visualizer.py
+18. This code will generate 2 files:
+19. q-table-heatmap.png image with risk map and best actions heatmap
+20. Q-table-readable.xlsx which contains detailed q-values for each cell
