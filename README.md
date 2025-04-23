@@ -1,15 +1,7 @@
-# EK-Webots-Q-Learning
----
 # Author: Evgenii Korolev  
-# Updated: 2024-07-03  
-image: /q_table_heatmap.png
----
-
 # EK-Webots-Q-Learning
 
 A simulation project in Webots where the Khepera III robot learns autonomous navigation using Q-Learning. The robot avoids obstacles and finds optimal paths to a goal through exploration and reinforcement learning.
-
-<!-- more -->
 
 ## Overview
 
